@@ -16,9 +16,6 @@ The umat was implemented based on the I4I5 model [1-4]
 2. From left to right, the 7 constants are:
 
    <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\Psi&space;=&space;\frac{\mu}{2}[(I_1-3)&plus;\zeta(I_4-1)^2&plus;\phi&space;I_5^*]" title="\Psi = \frac{\mu}{2}[(I_1-3)+\zeta(I_4-1)^2+\phi I_5^*]" />
-$$
-\Psi = \frac{\mu}{2}[(I_1-3)+\zeta(I_4-1)^2+\phi I_5^*]
-$$
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\mu" title="\inline \mu" />- shear modulus
 
