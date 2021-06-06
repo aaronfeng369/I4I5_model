@@ -1,0 +1,1687 @@
+1
+
+   Abaqus 6.12-1                                  Date 07-三月-2017   Time 13:33:01
+   For use by  under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes Simulia Corp.
+                                 Rising Sun Mills
+                                 166 Valley Street
+                           Providence, RI 02909-2499, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine user-PC 
+                          you are authorized to run
+                          Abaqus/Standard until 07-Jul-2028
+
+                          Your site id is: AE125930 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.simulia.com/about/locations.html
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                    Abaqus 6.12-1                        * 
+                *                                                         * 
+                *          BUILD ID: 2012_03_13-20.23.18 119612           * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using release 6.12 manuals    * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+          I4I5 transIso uniaxial stretch                                                                                                                                                                                                                                  
+  *Node
+  *Nset, nset=xface
+  *Nset, nset=yface
+  *Nset, nset=zface
+  *Nset, nset=top
+  *Nset, nset=right
+  *Element, type=C3D8H
+  *Elset, elset=element
+  *include, input=amplitude_time.inp
+
+  *** INPUT DATA IS READ FROM FILE amplitude_time.inp                                                              
+
+  *Material, name=FengUmat
+  *User Material, Constants=7
+  *DEPVAR
+  *Solid Section, elset=element, material=FengUmat
+  *Boundary
+  *Boundary
+  *Boundary
+  *Boundary, amplitude=stretch
+  *Solid Section, elset=element, material=FengUmat
+  *output, field, time points=TimePoints-1
+  *Output, history, frequency=0
+  *Element Output, directions=YES
+  *output, field, time points=TimePoints-1
+  *Output, history, frequency=0
+  *Element Output, directions=YES
+  *output, field, time points=TimePoints-1
+  *Output, history, frequency=0
+  *Element Output, directions=YES
+  *Amplitude, name=stretch, time=Step TIME
+  *Time Points, name=TimePoints-1
+  *Step, name=Step-1, nlgeom=YES, inc=1000
+  *output, field, time points=TimePoints-1
+  *Output, history, frequency=0
+  *Step, name=Step-1, nlgeom=YES, inc=1000
+  *Step, name=Step-1, nlgeom=YES, inc=1000
+  *Static
+  *Boundary, amplitude=stretch
+  *output, field, time points=TimePoints-1
+  *Node Output
+  *Element Output, directions=YES
+  *Output, history, frequency=0
+  *El Print, frequency=1, position=centroid, elset=element
+  *End Step
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+  *Boundary
+  *Boundary
+  *Boundary
+  *Step, name=Step-1, nlgeom=YES, inc=1000
+  *Static
+  *Boundary, amplitude=stretch
+  *End Step
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                     1
+          NUMBER OF NODES IS                                        9
+          NUMBER OF NODES DEFINED BY THE USER                       8
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM         1
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                   25
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   0.0000    
+       SYSTEM TIME (SEC)    =  0.10000    
+       TOTAL CPU TIME (SEC) =  0.10000    
+       WALLCLOCK TIME (SEC) =          0
+1
+
+   Abaqus 6.12-1                                  Date 07-三月-2017   Time 13:33:03
+   For use by  under license from Dassault Systemes or its subsidiary.
+
+     I4I5 transIso uniaxial stretch                                                            STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                0.100    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                0.100    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION         (MBYTES)           (MBYTES)
+  
+     1         5.53E+003               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+                                INCREMENT     1 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  2.000E-02
+ STEP TIME COMPLETED       2.000E-02,  TOTAL TIME COMPLETED        2.000E-02
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -1.1514E-04   20.58     -1.1514E-04 -1.8927E-16  3.8349E-17  1.7184E-16
+
+ MAXIMUM         -1.1514E-04   20.58     -1.1514E-04 -1.8927E-16  3.8349E-17  1.7184E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -1.1514E-04   20.58     -1.1514E-04 -1.8927E-16  3.8349E-17  1.7184E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     2 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  4.000E-02
+ STEP TIME COMPLETED       4.000E-02,  TOTAL TIME COMPLETED        4.000E-02
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       2.5696E-04   41.46      2.5696E-04  6.5985E-17  5.7768E-17 -8.7386E-17
+
+ MAXIMUM          2.5696E-04   41.46      2.5696E-04  6.5985E-17  5.7768E-17 -8.7386E-17                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          2.5696E-04   41.46      2.5696E-04  6.5985E-17  5.7768E-17 -8.7386E-17                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     3 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  6.000E-02
+ STEP TIME COMPLETED       6.000E-02,  TOTAL TIME COMPLETED        6.000E-02
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       3.2862E-04   62.67      3.2862E-04  1.6237E-16  6.3875E-15 -3.8736E-16
+
+ MAXIMUM          3.2862E-04   62.67      3.2862E-04  1.6237E-16  6.3875E-15 -3.8736E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          3.2862E-04   62.67      3.2862E-04  1.6237E-16  6.3875E-15 -3.8736E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     4 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  8.000E-02
+ STEP TIME COMPLETED       8.000E-02,  TOTAL TIME COMPLETED        8.000E-02
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       4.5092E-04   84.17      4.5092E-04  2.3966E-16 -3.6332E-16 -3.3096E-16
+
+ MAXIMUM          4.5092E-04   84.17      4.5092E-04  2.3966E-16 -3.6332E-16 -3.3096E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          4.5092E-04   84.17      4.5092E-04  2.3966E-16 -3.6332E-16 -3.3096E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     5 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.100    
+ STEP TIME COMPLETED       0.100    ,  TOTAL TIME COMPLETED        0.100    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       5.4090E-04   106.0      5.4090E-04 -5.8205E-16 -5.4292E-15  3.0456E-16
+
+ MAXIMUM          5.4090E-04   106.0      5.4090E-04 -5.8205E-16 -5.4292E-15  3.0456E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          5.4090E-04   106.0      5.4090E-04 -5.8205E-16 -5.4292E-15  3.0456E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     6 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.120    
+ STEP TIME COMPLETED       0.120    ,  TOTAL TIME COMPLETED        0.120    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       6.2785E-04   128.0      6.2785E-04 -2.3472E-16 -3.2930E-15 -4.3814E-16
+
+ MAXIMUM          6.2785E-04   128.0      6.2785E-04 -2.3472E-16 -3.2930E-15 -4.3814E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          6.2785E-04   128.0      6.2785E-04 -2.3472E-16 -3.2930E-15 -4.3814E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     7 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.140    
+ STEP TIME COMPLETED       0.140    ,  TOTAL TIME COMPLETED        0.140    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       7.0636E-04   150.4      7.0636E-04  3.1945E-15 -4.9872E-18 -3.1058E-15
+
+ MAXIMUM          7.0636E-04   150.4      7.0636E-04  3.1945E-15 -4.9872E-18 -3.1058E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          7.0636E-04   150.4      7.0636E-04  3.1945E-15 -4.9872E-18 -3.1058E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     8 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.160    
+ STEP TIME COMPLETED       0.160    ,  TOTAL TIME COMPLETED        0.160    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       7.7826E-04   172.9      7.7826E-04  2.5387E-15 -5.4459E-15  3.8180E-15
+
+ MAXIMUM          7.7826E-04   172.9      7.7826E-04  2.5387E-15 -5.4459E-15  3.8180E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          7.7826E-04   172.9      7.7826E-04  2.5387E-15 -5.4459E-15  3.8180E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT     9 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.180    
+ STEP TIME COMPLETED       0.180    ,  TOTAL TIME COMPLETED        0.180    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       8.4354E-04   195.8      8.4354E-04 -2.1906E-17  8.6434E-16  3.8884E-15
+
+ MAXIMUM          8.4354E-04   195.8      8.4354E-04 -2.1906E-17  8.6434E-16  3.8884E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          8.4354E-04   195.8      8.4354E-04 -2.1906E-17  8.6434E-16  3.8884E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    10 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.200    
+ STEP TIME COMPLETED       0.200    ,  TOTAL TIME COMPLETED        0.200    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       9.0256E-04   218.8      9.0256E-04  1.7710E-14  1.1822E-16  1.6907E-14
+
+ MAXIMUM          9.0256E-04   218.8      9.0256E-04  1.7710E-14  1.1822E-16  1.6907E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          9.0256E-04   218.8      9.0256E-04  1.7710E-14  1.1822E-16  1.6907E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    11 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.220    
+ STEP TIME COMPLETED       0.220    ,  TOTAL TIME COMPLETED        0.220    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       9.5564E-04   242.1      9.5564E-04 -8.5569E-15 -8.7432E-16 -1.0677E-14
+
+ MAXIMUM          9.5564E-04   242.1      9.5564E-04 -8.5569E-15 -8.7432E-16 -1.0677E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          9.5564E-04   242.1      9.5564E-04 -8.5569E-15 -8.7432E-16 -1.0677E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    12 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.240    
+ STEP TIME COMPLETED       0.240    ,  TOTAL TIME COMPLETED        0.240    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.0031E-03   265.7      1.0031E-03  4.5421E-15  2.3888E-15 -8.6917E-15
+
+ MAXIMUM          1.0031E-03   265.7      1.0031E-03  4.5421E-15  2.3888E-15 -8.6917E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.0031E-03   265.7      1.0031E-03  4.5421E-15  2.3888E-15 -8.6917E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    13 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.260    
+ STEP TIME COMPLETED       0.260    ,  TOTAL TIME COMPLETED        0.260    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.0452E-03   289.4      1.0452E-03 -1.0398E-14 -1.3995E-15  3.8165E-15
+
+ MAXIMUM          1.0452E-03   289.4      1.0452E-03 -1.0398E-14 -1.3995E-15  3.8165E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.0452E-03   289.4      1.0452E-03 -1.0398E-14 -1.3995E-15  3.8165E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    14 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.280    
+ STEP TIME COMPLETED       0.280    ,  TOTAL TIME COMPLETED        0.280    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.0824E-03   313.3      1.0824E-03 -1.8941E-14  3.0642E-15 -2.3364E-14
+
+ MAXIMUM          1.0824E-03   313.3      1.0824E-03 -1.8941E-14  3.0642E-15 -2.3364E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.0824E-03   313.3      1.0824E-03 -1.8941E-14  3.0642E-15 -2.3364E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    15 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.300    
+ STEP TIME COMPLETED       0.300    ,  TOTAL TIME COMPLETED        0.300    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.1149E-03   337.5      1.1149E-03  1.0210E-15  1.3243E-15 -6.2618E-15
+
+ MAXIMUM          1.1149E-03   337.5      1.1149E-03  1.0210E-15  1.3243E-15 -6.2618E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.1149E-03   337.5      1.1149E-03  1.0210E-15  1.3243E-15 -6.2618E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    16 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.320    
+ STEP TIME COMPLETED       0.320    ,  TOTAL TIME COMPLETED        0.320    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.1431E-03   361.8      1.1431E-03  5.5437E-15  2.6289E-15 -7.7036E-15
+
+ MAXIMUM          1.1431E-03   361.8      1.1431E-03  5.5437E-15  2.6289E-15 -7.7036E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.1431E-03   361.8      1.1431E-03  5.5437E-15  2.6289E-15 -7.7036E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    17 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.340    
+ STEP TIME COMPLETED       0.340    ,  TOTAL TIME COMPLETED        0.340    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -3.8535E-03   386.3     -3.8535E-03  1.7077E-14  2.6643E-16  1.6508E-14
+
+ MAXIMUM         -3.8535E-03   386.3     -3.8535E-03  1.7077E-14  2.6643E-16  1.6508E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -3.8535E-03   386.3     -3.8535E-03  1.7077E-14  2.6643E-16  1.6508E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    18 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.360    
+ STEP TIME COMPLETED       0.360    ,  TOTAL TIME COMPLETED        0.360    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.4855E-03   411.0      1.4855E-03  1.3560E-14  2.5459E-15  1.8545E-14
+
+ MAXIMUM          1.4855E-03   411.0      1.4855E-03  1.3560E-14  2.5459E-15  1.8545E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.4855E-03   411.0      1.4855E-03  1.3560E-14  2.5459E-15  1.8545E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    19 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.380    
+ STEP TIME COMPLETED       0.380    ,  TOTAL TIME COMPLETED        0.380    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -3.3884E-03   435.9     -3.3884E-03  1.1788E-14  5.3188E-16  4.0964E-15
+
+ MAXIMUM         -3.3884E-03   435.9     -3.3884E-03  1.1788E-14  5.3188E-16  4.0964E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -3.3884E-03   435.9     -3.3884E-03  1.1788E-14  5.3188E-16  4.0964E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    20 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.400    
+ STEP TIME COMPLETED       0.400    ,  TOTAL TIME COMPLETED        0.400    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.4995E-03   460.9      1.4995E-03  1.7480E-16  4.7156E-16  7.1667E-15
+
+ MAXIMUM          1.4995E-03   460.9      1.4995E-03  1.7480E-16  4.7156E-16  7.1667E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.4995E-03   460.9      1.4995E-03  1.7480E-16  4.7156E-16  7.1667E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    21 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.420    
+ STEP TIME COMPLETED       0.420    ,  TOTAL TIME COMPLETED        0.420    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -3.5148E-03   486.1     -3.5148E-03  3.2821E-15  1.8309E-16  6.4730E-15
+
+ MAXIMUM         -3.5148E-03   486.1     -3.5148E-03  3.2821E-15  1.8309E-16  6.4730E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -3.5148E-03   486.1     -3.5148E-03  3.2821E-15  1.8309E-16  6.4730E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    22 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.440    
+ STEP TIME COMPLETED       0.440    ,  TOTAL TIME COMPLETED        0.440    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -5.0195E-03   511.5     -5.0195E-03 -1.9740E-14  6.5099E-16 -8.4940E-15
+
+ MAXIMUM         -5.0195E-03   511.5     -5.0195E-03 -1.9740E-14  6.5099E-16 -8.4940E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -5.0195E-03   511.5     -5.0195E-03 -1.9740E-14  6.5099E-16 -8.4940E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    23 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.460    
+ STEP TIME COMPLETED       0.460    ,  TOTAL TIME COMPLETED        0.460    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.8137E-03   537.0     -4.8137E-03 -1.0551E-14 -1.3031E-15 -1.4791E-16
+
+ MAXIMUM         -4.8137E-03   537.0     -4.8137E-03 -1.0551E-14 -1.3031E-15 -1.4791E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.8137E-03   537.0     -4.8137E-03 -1.0551E-14 -1.3031E-15 -1.4791E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    24 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.480    
+ STEP TIME COMPLETED       0.480    ,  TOTAL TIME COMPLETED        0.480    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.6292E-03   562.7     -4.6292E-03  1.9432E-15 -2.5593E-15  1.3296E-15
+
+ MAXIMUM         -4.6292E-03   562.7     -4.6292E-03  1.9432E-15 -2.5593E-15  1.3296E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.6292E-03   562.7     -4.6292E-03  1.9432E-15 -2.5593E-15  1.3296E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    25 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.500    
+ STEP TIME COMPLETED       0.500    ,  TOTAL TIME COMPLETED        0.500    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.6167E-03   588.5     -4.6167E-03  4.8719E-15  3.3092E-16  3.4950E-15
+
+ MAXIMUM         -4.6167E-03   588.5     -4.6167E-03  4.8719E-15  3.3092E-16  3.4950E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.6167E-03   588.5     -4.6167E-03  4.8719E-15  3.3092E-16  3.4950E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    26 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.520    
+ STEP TIME COMPLETED       0.520    ,  TOTAL TIME COMPLETED        0.520    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.6289E-03   614.4     -4.6289E-03  1.1280E-14 -1.3564E-15  1.8015E-14
+
+ MAXIMUM         -4.6289E-03   614.4     -4.6289E-03  1.1280E-14 -1.3564E-15  1.8015E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.6289E-03   614.4     -4.6289E-03  1.1280E-14 -1.3564E-15  1.8015E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    27 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.540    
+ STEP TIME COMPLETED       0.540    ,  TOTAL TIME COMPLETED        0.540    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.6227E-03   640.5     -4.6227E-03  1.1308E-14  2.8840E-16  4.0709E-15
+
+ MAXIMUM         -4.6227E-03   640.5     -4.6227E-03  1.1308E-14  2.8840E-16  4.0709E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.6227E-03   640.5     -4.6227E-03  1.1308E-14  2.8840E-16  4.0709E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    28 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.560    
+ STEP TIME COMPLETED       0.560    ,  TOTAL TIME COMPLETED        0.560    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.6051E-03   666.8     -4.6051E-03  5.3644E-15 -2.6171E-16  1.2245E-15
+
+ MAXIMUM         -4.6051E-03   666.8     -4.6051E-03  5.3644E-15 -2.6171E-16  1.2245E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.6051E-03   666.8     -4.6051E-03  5.3644E-15 -2.6171E-16  1.2245E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    29 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.580    
+ STEP TIME COMPLETED       0.580    ,  TOTAL TIME COMPLETED        0.580    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.5823E-03   693.1     -4.5823E-03  2.9189E-14 -7.3615E-16 -1.4595E-14
+
+ MAXIMUM         -4.5823E-03   693.1     -4.5823E-03  2.9189E-14 -7.3615E-16 -1.4595E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.5823E-03   693.1     -4.5823E-03  2.9189E-14 -7.3615E-16 -1.4595E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    30 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.600    
+ STEP TIME COMPLETED       0.600    ,  TOTAL TIME COMPLETED        0.600    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.5555E-03   719.6     -4.5555E-03  2.0145E-14 -1.2582E-15 -4.6965E-15
+
+ MAXIMUM         -4.5555E-03   719.6     -4.5555E-03  2.0145E-14 -1.2582E-15 -4.6965E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.5555E-03   719.6     -4.5555E-03  2.0145E-14 -1.2582E-15 -4.6965E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    31 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.620    
+ STEP TIME COMPLETED       0.620    ,  TOTAL TIME COMPLETED        0.620    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.5244E-03   746.2     -4.5244E-03  3.6585E-14  4.2052E-16  2.1913E-14
+
+ MAXIMUM         -4.5244E-03   746.2     -4.5244E-03  3.6585E-14  4.2052E-16  2.1913E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.5244E-03   746.2     -4.5244E-03  3.6585E-14  4.2052E-16  2.1913E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    32 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.640    
+ STEP TIME COMPLETED       0.640    ,  TOTAL TIME COMPLETED        0.640    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.4893E-03   772.9     -4.4893E-03  1.4478E-14 -1.6628E-15 -1.6305E-15
+
+ MAXIMUM         -4.4893E-03   772.9     -4.4893E-03  1.4478E-14 -1.6628E-15 -1.6305E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.4893E-03   772.9     -4.4893E-03  1.4478E-14 -1.6628E-15 -1.6305E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    33 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.660    
+ STEP TIME COMPLETED       0.660    ,  TOTAL TIME COMPLETED        0.660    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.4508E-03   799.8     -4.4508E-03 -7.8886E-31 -1.4972E-15  5.4194E-15
+
+ MAXIMUM         -4.4508E-03   799.8     -4.4508E-03 -7.8886E-31 -1.4972E-15  5.4194E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.4508E-03   799.8     -4.4508E-03 -7.8886E-31 -1.4972E-15  5.4194E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    34 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.680    
+ STEP TIME COMPLETED       0.680    ,  TOTAL TIME COMPLETED        0.680    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.4092E-03   826.7     -4.4092E-03  9.0522E-15  1.1916E-17 -7.4064E-15
+
+ MAXIMUM         -4.4092E-03   826.7     -4.4092E-03  9.0522E-15  1.1916E-17 -7.4064E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.4092E-03   826.7     -4.4092E-03  9.0522E-15  1.1916E-17 -7.4064E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    35 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.700    
+ STEP TIME COMPLETED       0.700    ,  TOTAL TIME COMPLETED        0.700    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.3647E-03   853.8     -4.3647E-03  3.2026E-14 -7.5537E-16  3.8066E-14
+
+ MAXIMUM         -4.3647E-03   853.8     -4.3647E-03  3.2026E-14 -7.5537E-16  3.8066E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.3647E-03   853.8     -4.3647E-03  3.2026E-14 -7.5537E-16  3.8066E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    36 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.720    
+ STEP TIME COMPLETED       0.720    ,  TOTAL TIME COMPLETED        0.720    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.3178E-03   881.0     -4.3178E-03  1.3800E-14  2.1704E-16 -5.9655E-15
+
+ MAXIMUM         -4.3178E-03   881.0     -4.3178E-03  1.3800E-14  2.1704E-16 -5.9655E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.3178E-03   881.0     -4.3178E-03  1.3800E-14  2.1704E-16 -5.9655E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    37 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.740    
+ STEP TIME COMPLETED       0.740    ,  TOTAL TIME COMPLETED        0.740    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.2687E-03   908.3     -4.2687E-03  7.6439E-15 -5.5678E-16 -2.2050E-15
+
+ MAXIMUM         -4.2687E-03   908.3     -4.2687E-03  7.6439E-15 -5.5678E-16 -2.2050E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.2687E-03   908.3     -4.2687E-03  7.6439E-15 -5.5678E-16 -2.2050E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    38 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.760    
+ STEP TIME COMPLETED       0.760    ,  TOTAL TIME COMPLETED        0.760    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1      -4.2177E-03   935.6     -4.2177E-03 -6.9100E-15  1.6993E-15  2.3509E-14
+
+ MAXIMUM         -4.2177E-03   935.6     -4.2177E-03 -6.9100E-15  1.6993E-15  2.3509E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM         -4.2177E-03   935.6     -4.2177E-03 -6.9100E-15  1.6993E-15  2.3509E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    39 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.780    
+ STEP TIME COMPLETED       0.780    ,  TOTAL TIME COMPLETED        0.780    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.3742E-02   963.1      1.3742E-02  1.8868E-14 -9.0711E-17  1.3806E-15
+
+ MAXIMUM          1.3742E-02   963.1      1.3742E-02  1.8868E-14 -9.0711E-17  1.3806E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.3742E-02   963.1      1.3742E-02  1.8868E-14 -9.0711E-17  1.3806E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    40 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.800    
+ STEP TIME COMPLETED       0.800    ,  TOTAL TIME COMPLETED        0.800    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       2.4087E-03   990.7      2.4087E-03  4.8535E-15 -1.8709E-15  2.7085E-14
+
+ MAXIMUM          2.4087E-03   990.7      2.4087E-03  4.8535E-15 -1.8709E-15  2.7085E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          2.4087E-03   990.7      2.4087E-03  4.8535E-15 -1.8709E-15  2.7085E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    41 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.820    
+ STEP TIME COMPLETED       0.820    ,  TOTAL TIME COMPLETED        0.820    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.5076E-02   1018.      1.5076E-02 -2.6508E-14  2.9228E-15  3.4014E-14
+
+ MAXIMUM          1.5076E-02   1018.      1.5076E-02 -2.6508E-14  2.9228E-15  3.4014E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.5076E-02   1018.      1.5076E-02 -2.6508E-14  2.9228E-15  3.4014E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    42 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.840    
+ STEP TIME COMPLETED       0.840    ,  TOTAL TIME COMPLETED        0.840    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       3.4080E-03   1046.      3.4080E-03 -9.7676E-16  2.7870E-15  1.6035E-14
+
+ MAXIMUM          3.4080E-03   1046.      3.4080E-03 -9.7676E-16  2.7870E-15  1.6035E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          3.4080E-03   1046.      3.4080E-03 -9.7676E-16  2.7870E-15  1.6035E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    43 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.860    
+ STEP TIME COMPLETED       0.860    ,  TOTAL TIME COMPLETED        0.860    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.4546E-02   1074.      1.4546E-02 -1.0781E-14  7.6413E-16  1.0947E-14
+
+ MAXIMUM          1.4546E-02   1074.      1.4546E-02 -1.0781E-14  7.6413E-16  1.0947E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.4546E-02   1074.      1.4546E-02 -1.0781E-14  7.6413E-16  1.0947E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    44 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.880    
+ STEP TIME COMPLETED       0.880    ,  TOTAL TIME COMPLETED        0.880    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       3.7490E-03   1102.      3.7490E-03  8.2765E-15 -2.3197E-16 -1.2668E-15
+
+ MAXIMUM          3.7490E-03   1102.      3.7490E-03  8.2765E-15 -2.3197E-16 -1.2668E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          3.7490E-03   1102.      3.7490E-03  8.2765E-15 -2.3197E-16 -1.2668E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    45 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.900    
+ STEP TIME COMPLETED       0.900    ,  TOTAL TIME COMPLETED        0.900    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.3821E-02   1130.      1.3821E-02 -6.0172E-15 -1.0963E-16  1.9771E-15
+
+ MAXIMUM          1.3821E-02   1130.      1.3821E-02 -6.0172E-15 -1.0963E-16  1.9771E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.3821E-02   1130.      1.3821E-02 -6.0172E-15 -1.0963E-16  1.9771E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    46 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.920    
+ STEP TIME COMPLETED       0.920    ,  TOTAL TIME COMPLETED        0.920    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       3.9894E-03   1158.      3.9894E-03 -4.1628E-14 -7.1172E-16  1.9677E-14
+
+ MAXIMUM          3.9894E-03   1158.      3.9894E-03 -4.1628E-14 -7.1172E-16  1.9677E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          3.9894E-03   1158.      3.9894E-03 -4.1628E-14 -7.1172E-16  1.9677E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    47 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.940    
+ STEP TIME COMPLETED       0.940    ,  TOTAL TIME COMPLETED        0.940    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.3095E-02   1186.      1.3095E-02  1.7964E-14 -1.2652E-15 -1.5119E-15
+
+ MAXIMUM          1.3095E-02   1186.      1.3095E-02  1.7964E-14 -1.2652E-15 -1.5119E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.3095E-02   1186.      1.3095E-02  1.7964E-14 -1.2652E-15 -1.5119E-15                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    48 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.960    
+ STEP TIME COMPLETED       0.960    ,  TOTAL TIME COMPLETED        0.960    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       4.1916E-03   1215.      4.1916E-03 -8.3168E-15 -2.2208E-16 -5.8669E-14
+
+ MAXIMUM          4.1916E-03   1215.      4.1916E-03 -8.3168E-15 -2.2208E-16 -5.8669E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          4.1916E-03   1215.      4.1916E-03 -8.3168E-15 -2.2208E-16 -5.8669E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    49 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED  0.980    
+ STEP TIME COMPLETED       0.980    ,  TOTAL TIME COMPLETED        0.980    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       1.2390E-02   1243.      1.2390E-02  1.8370E-15  2.6198E-16  3.6648E-14
+
+ MAXIMUM          1.2390E-02   1243.      1.2390E-02  1.8370E-15  2.6198E-16  3.6648E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          1.2390E-02   1243.      1.2390E-02  1.8370E-15  2.6198E-16  3.6648E-14                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+                                INCREMENT    50 SUMMARY
+
+
+ TIME INCREMENT COMPLETED  2.000E-02,  FRACTION OF STEP COMPLETED   1.00    
+ STEP TIME COMPLETED        1.00    ,  TOTAL TIME COMPLETED         1.00    
+
+
+
+                                                  E L E M E N T   O U T P U T
+
+
+
+
+
+   THE FOLLOWING TABLE IS PRINTED AT THE CENTROID OF THE ELEMENT FOR ELEMENT TYPE C3D8H AND ELEMENT 
+   SET ELEMENT
+
+    ELEMENT  FOOT-   S11         S22         S33         S12         S13         S23         
+             NOTE 
+
+           1       4.3628E-03   1272.      4.3628E-03 -1.7352E-14  1.9838E-15  2.7987E-16
+
+ MAXIMUM          4.3628E-03   1272.      4.3628E-03 -1.7352E-14  1.9838E-15  2.7987E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+ MINIMUM          4.3628E-03   1272.      4.3628E-03 -1.7352E-14  1.9838E-15  2.7987E-16                                    
+ ELEMENT                  1           1           1           1           1           1                                     
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      1 WARNING MESSAGES ON THE DAT FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =  0.80000    
+       SYSTEM TIME (SEC)    =  0.80000    
+       TOTAL CPU TIME (SEC) =   1.6000    
+       WALLCLOCK TIME (SEC) =          2

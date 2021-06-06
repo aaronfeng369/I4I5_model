@@ -1,0 +1,83 @@
+*Heading
+I4I5 transIso uniaxial stretch
+** Job name: I4I5PerStretch
+** Dec-30-2013===YF===Test I4I5 model stretch perpendicular to fiber direction
+*Preprint, echo=NO, model=NO, history=NO, contact=NO
+**
+*Node
+1, 0., 0., 0.,
+2, 1., 0., 0.,
+3, 1., 1., 0.,
+4, 0., 1., 0.,
+5, 0., 0., 1.,
+6, 1., 0., 1.,
+7, 1., 1., 1.,
+8, 0., 1., 1.,
+*Nset, nset=xface
+1, 4, 8, 5
+*Nset, nset=yface
+1, 2, 6, 5
+*Nset, nset=zface
+4, 3, 2, 1
+*Nset, nset=top
+4, 3, 7, 8
+*Nset, nset=right
+2, 3, 7, 6
+*Element, type=C3D8H
+1,  1, 2, 3, 4, 5, 6, 7, 8
+*Elset, elset=element
+1
+*Solid Section, elset=element, material=FengUmat
+** 
+** MATERIALS
+** 
+*Material, name=FengUmat
+*User Material, Constants=7
+13.0, 50, 1.0, 1.0e3, 0, 1, 0.0, 
+*DEPVAR
+12
+** 
+** BOUNDARY CONDITIONS
+** 
+** Name: roller_x Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+xface, XSYMM
+** Name: roller_y Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+yface, YSYMM
+** Name: roller_z Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+zface, ZSYMM
+** ----------------------------------------------------------------
+** Stretch amplitude 
+*include, input=amplitude_time.inp 
+** ----------------------------------------------------------------
+** 
+** STEP: Step-1
+** 
+*Step, name=Step-1, nlgeom=YES, inc=1000
+*Static
+0.1, 1.0, 1e-05, 0.1
+** 
+** BOUNDARY CONDITIONS
+** 
+** Name: BC-3 Type: Displacement/Rotation
+*Boundary, amplitude=stretch
+** Apply displacement perpendicular to fiber direction on top
+top, 2, 2, 1
+** 
+** OUTPUT REQUESTS
+** 
+*Restart, write, frequency=0
+** 
+** FIELD OUTPUT: F-Output-1
+** 
+*output, field, time points=TimePoints-1
+*Node Output
+U, 
+*Element Output, directions=YES
+S, 
+*Output, history, frequency=0
+*El Print, frequency=1, position=centroid, elset=element
+S
+*End Step
