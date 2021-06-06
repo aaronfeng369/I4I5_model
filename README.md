@@ -16,31 +16,30 @@ The umat was implemented based on the I4I5 model [1-4]
 2. From left to right, the 7 constants are:
 
    <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\Psi&space;=&space;\frac{\mu}{2}[(I_1-3)&plus;\zeta(I_4-1)^2&plus;\phi&space;I_5^*]" title="\Psi = \frac{\mu}{2}[(I_1-3)+\zeta(I_4-1)^2+\phi I_5^*]" />
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\mu" title="\inline \mu" />- shear modulus
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\zeta" title="\inline \zeta" />– stretch parameter
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\phi" title="\inline \phi" /> – shear parameter
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;D" title="\inline D" /> – for implementing the incompressibility
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;x_A" title="\inline x_A" />– x component of the fiber vector
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;y_A" title="\inline y_A" />– y component of the fiber vector
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;z_A" title="\inline z_A" /> – z component of the fiber vector
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\mu" title="\inline \mu" />- shear modulus
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\zeta" title="\inline \zeta" />– stretch parameter
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;\phi" title="\inline \phi" /> – shear parameter
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;D" title="\inline D" /> – for implementing the incompressibility
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;x_A" title="\inline x_A" />– x component of the fiber vector
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;y_A" title="\inline y_A" />– y component of the fiber vector
+   
+   <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\inline&space;z_A" title="\inline z_A" /> – z component of the fiber vector
 
 
 
 3. Specify the Gaussian point in Umat
 
-Check line 12 and 13, RTOTAL and DROTINC, the first number of the matrix has to be set to the total number of Gaussian points in your simulation. In this example, 8 points were set.
+   Check line 12 and 13, RTOTAL and DROTINC, the first number of the matrix has to be set to the total number of Gaussian points in your simulation. In this example, 8 points were set.
 
 
 
-
-References
+### References
 
 1. Feng, Y., et al., *Characterizing white matter tissue in large strain via asymmetric indentation and inverse finite element modeling.* Journal of the Mechanical Behavior of Biomedical Materials, 2017. **65**: p. 490-501.
 
